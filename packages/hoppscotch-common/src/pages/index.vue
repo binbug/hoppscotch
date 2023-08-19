@@ -129,6 +129,7 @@ import {
   changeCurrentSyncStatus,
   currentSyncingStatus$,
 } from "~/newstore/syncing"
+import { defineActionHandler } from "~/helpers/actions"
 
 const savingRequest = ref(false)
 const confirmingCloseForTabID = ref<string | null>(null)
@@ -364,6 +365,11 @@ function oAuthURL() {
     } catch (_) {}
   })
 }
+
+defineActionHandler("tabs.new", addNewTab)
+defineActionHandler("tabs.remove", () => {
+  removeTab(currentTabID.value)
+})
 
 setupTabStateSync()
 bindRequestToURLParams()

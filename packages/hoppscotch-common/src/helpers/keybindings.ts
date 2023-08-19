@@ -67,6 +67,8 @@ export const bindings: {
   "ctrl-shift-p": "response.preview.toggle",
   "ctrl-j": "response.file.download",
   "ctrl-.": "response.copy",
+  "ctrl-t": "tabs.new",
+  "ctrl-w": "tabs.remove",
 }
 
 /**
